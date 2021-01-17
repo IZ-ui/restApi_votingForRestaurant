@@ -1,6 +1,5 @@
 package com.restapi.voting.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -22,7 +21,7 @@ public class Vote extends AbstractBaseEntity {
     @NotNull
     private int restaurantId;
 
-    @Column(name = "date", nullable = false)
+    @Column(name = "vote_date", nullable = false)
     @NotNull
     private LocalDate date = LocalDate.now();
 

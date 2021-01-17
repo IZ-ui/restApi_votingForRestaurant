@@ -20,7 +20,7 @@ VALUES ('KFC'),                                         --100003
        ('McDonalds'),                                   --100004
        ('Burger King');                                 --100005
 
-INSERT INTO dish (RESTAURANT_ID, NAME, PRICE, DATE)
+INSERT INTO dish (RESTAURANT_ID, NAME, PRICE, DISH_DATE)
 VALUES (100003, 'Longer', 99.00, '2021-01-06'),        --100006
        (100003, 'Nestea', 69.00, '2021-01-06'),        --100007
        (100003, 'Twister', 199.00, '2021-01-06'),      --100008
@@ -31,5 +31,5 @@ VALUES (100003, 'Longer', 99.00, '2021-01-06'),        --100006
        (100005, 'Cezar Roll', 159.00, CURRENT_DATE),   --100013
        (100005, 'Pepsi', 89.00, CURRENT_DATE);         --100014
 
-INSERT INTO vote (USER_ID, RESTAURANT_ID, DATE)
+INSERT INTO vote (USER_ID, RESTAURANT_ID, VOTE_DATE)
 VALUES (100000, 100003, '2021-01-06');                --100015

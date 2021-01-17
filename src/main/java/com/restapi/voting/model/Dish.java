@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "dish", uniqueConstraints = {@UniqueConstraint(columnNames = {"restaurant_id", "name", "date"},
+@Table(name = "dish", uniqueConstraints = {@UniqueConstraint(columnNames = {"restaurant_id", "name", "dish_date"},
         name = "dishes_unique_restaurant_name_datetime_idx")})
 public class Dish extends AbstractNamedEntity {
 
@@ -27,7 +27,7 @@ public class Dish extends AbstractNamedEntity {
     @Positive
     private BigDecimal price;
 
-    @Column(name = "date", nullable = false)
+    @Column(name = "dish_date", nullable = false)
     @NotNull
     @DateTimeFormat
     private LocalDate date = LocalDate.now();
