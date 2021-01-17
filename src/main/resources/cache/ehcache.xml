@@ -13,6 +13,5 @@
     </cache-template>
 
     <cache alias="restaurant" uses-template="expiryCache"/>
-    <cache alias="dish" uses-template="expiryCache"/>
     <cache alias="todayDish" uses-template="expiryCache"/>
 </config>

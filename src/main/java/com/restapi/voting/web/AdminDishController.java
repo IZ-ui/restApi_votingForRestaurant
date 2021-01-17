@@ -38,7 +38,6 @@ public class AdminDishController {
         return checkNotFoundWithId(repository.findById(id).orElse(null), id);
     }
 
-    @CacheEvict(value = "dish", allEntries = true)
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(value = HttpStatus.CREATED)
     public ResponseEntity<Dish> create(@RequestBody Dish dish) {
@@ -54,7 +53,6 @@ public class AdminDishController {
         return ResponseEntity.created(uriOfNewResource).body(created);
     }
 
-    @CacheEvict(value = "dish", allEntries = true)
     @PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public Dish update(@RequestBody Dish dish, @PathVariable int id) {
@@ -64,7 +62,6 @@ public class AdminDishController {
         return checkNotFoundWithId(repository.save(dish), dish.getId());
     }
 
-    @CacheEvict(value = "dish", allEntries = true)
     @DeleteMapping("{id}")
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void delete(@PathVariable int id) {
@@ -72,7 +69,6 @@ public class AdminDishController {
         checkNotFoundWithId(repository.delete(id) != 0, id);
     }
 
-    @Cacheable("dish")
     @GetMapping
     public List<Dish> getAllByRestaurantId(@RequestParam @Nullable int id) {
         log.info("get all dishes by restaurant id {}", id);
