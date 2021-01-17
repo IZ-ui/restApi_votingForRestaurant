@@ -42,7 +42,7 @@ public class UserVotingController {
         this.userRepository = userRepository;
     }
 
-    @Cacheable("dish")
+    @Cacheable("todayDish")
     @GetMapping("/restaurants/{id}/dishes")
     public List<Dish> getAllByRestaurantIdToday(@PathVariable int id) {
         log.info("get all today's dishes by restaurant id {}", id);
